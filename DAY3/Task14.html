@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Order Form</title>
+</head>
+<body>
+
+    <h2>Simple Order Form</h2>
+
+    <form>
+
+        <!-- Product Name -->
+        <label for="product">Product Name:</label><br>
+        <input type="text" id="product" name="product" required><br><br>
+
+        <!-- Quantity -->
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+        <!-- Address -->
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="30" required></textarea><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Place Order">
+
+    </form>
+
+</body>
+</html>
