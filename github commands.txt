@@ -1,0 +1,30 @@
+🔹 Step 3: Initialize Git
+ 
+Open terminal (Ctrl+`) and run:
+ 
+git init
+ 
+ 
+👉 This creates a new git repository inside your project.
+ 
+🔹 Step 4: Add Remote Repository
+git remote add origin https://github.com/username/react-mini-projects.git
+ 
+🔹 Step 5: Stage & Commit Your Code
+git add .
+git commit -m "Initial commit - React Mini Projects"
+ 
+🔹 Step 6: Push to GitHub
+git branch -M main
+git push -u origin main
+ 
+✅ Done!
+ 
+Now refresh your GitHub repo page — your React project will be uploaded 🎉
+ 
+⚡ Pro Tip:
+If you make changes later, just run:
+ 
+git add .
+git commit -m "Updated project"
+git push
