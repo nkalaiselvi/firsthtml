@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1{
+    margin: 20px;
+}
+
+.gallery{
+    width: 90%;
+    margin: auto;
+}
+
+.image-box{
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid #ccc;
+    padding: 5px;
+    background: white;
+}
+
+.image-box img{
+    width: 250px;
+    height: 180px;
+    display: block;
+}
+
+/* Optional Hover Effect */
+.image-box:hover{
+    transform: scale(1.05);
+    margin: 15px;
+    transition: 0.3s;
+    border-color: blue;
+}

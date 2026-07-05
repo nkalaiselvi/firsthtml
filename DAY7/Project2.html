@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Profile Card */
+        .card {
+            display: inline-block;
+            width: 250px;
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            vertical-align: top;
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Profile Card Layout</h1>
+
+    <div class="card">
+        <img src="/DAY6/DAY6/Image/profile.jpg" alt="Profile">
+        <h2>Kalai Selvi</h2>
+        <p>Web Developer</p>
+        <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="card">
+        <img src="/image/a1.jpg" alt="Profile">
+        <h2>Jane Smith</h2>
+        <p>Graphic Designer</p>
+        <a href="#" class="btn">View Profile</a>
+    </div>
+
+    <div class="card">
+        <img src="/image/a2.jpg" alt="Profile">
+        <h2>David Lee</h2>
+        <p>UI/UX Designer</p>
+        <a href="#" class="btn">View Profile</a>
+    </div>
+
+</body>
+</html>
