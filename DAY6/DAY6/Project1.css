@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f4f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:350px;
+    background:white;
+    border:2px solid #4CAF50;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+.card img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;      /* Crops image to fit the circle */
+    border:5px solid #4CAF50;
+    margin-bottom:20px;
+}
+.card h2{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#4CAF50;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}

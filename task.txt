@@ -1,0 +1,15 @@
+flexible box element
+(row , col, a;ign)using this
+
+
+why
+before flot, inline block(method diffculit)
+
+* univesal selector
+
+
+order value
+flex grow
+flex shrink
+flex basics 
+align self

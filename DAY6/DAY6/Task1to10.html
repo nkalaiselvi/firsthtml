@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Box Model Tasks</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background-color:#f4f4f4;
+        padding:20px;
+    }
+
+    h2{
+        color:darkblue;
+    }
+
+    /* Task 1 */
+    .box1{
+        width:200px;
+        height:200px;
+        background:lightblue;
+        margin-bottom:20px;
+    }
+
+    /* Task 2 */
+    .border-box{
+        width:200px;
+        height:100px;
+        border:3px solid black;
+        margin-bottom:20px;
+    }
+
+    /* Task 3 */
+    .padding-box{
+        width:200px;
+        border:2px solid blue;
+        padding:20px;
+        background:lightyellow;
+        margin-bottom:20px;
+    }
+
+    /* Task 4 */
+    .box{
+        width:150px;
+        height:100px;
+        background:lightgreen;
+        border:2px solid green;
+        margin-bottom:20px;
+    }
+
+    /* Task 5 */
+    .color-box{
+        width:200px;
+        height:120px;
+        background:orange;
+        border:4px solid red;
+        margin-bottom:20px;
+    }
+
+    /* Task 6 */
+    .card{
+        width:250px;
+        border:2px solid gray;
+        padding:20px;
+        background:white;
+        margin-bottom:20px;
+    }
+
+    /* Task 7 */
+    .container{
+        display:flex;
+    }
+
+    .small-box{
+        width:100px;
+        height:100px;
+        background:skyblue;
+        border:2px solid blue;
+        margin-right:20px;
+    }
+
+    /* Task 8 */
+    .solid{
+        border:3px solid black;
+        padding:10px;
+        margin-top:20px;
+    }
+
+    .dashed{
+        border:3px dashed red;
+        padding:10px;
+        margin-top:10px;
+    }
+
+    .dotted{
+        border:3px dotted blue;
+        padding:10px;
+        margin-top:10px;
+    }
+
+    /* Task 9 */
+    .center-box{
+        width:250px;
+        height:120px;
+        background:lightcoral;
+        border:2px solid black;
+        margin:30px auto;
+        text-align:center;
+        line-height:120px;
+        color:white;
+        font-weight:bold;
+    }
+
+    /* Task 10 */
+    .profile-card { 
+        width: 300px; 
+        background: #fff; 
+        border: 2px solid #333; 
+        padding: 20px; 
+        margin: 20px; 
+        border-radius: 10px; 
+        text-align: center; 
+    }
+     .image{
+    width:120px;
+    height:120px;
+    border:2px solid #666;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto 15px;
+}
+
+.image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Task 1 - 200px Box</h2>
+<div class="box1"></div>
+
+<h2>Task 2 - Border</h2>
+<div class="border-box"></div>
+
+<h2>Task 3 - Padding</h2>
+<div class="padding-box">
+    This box has 20px padding.
+</div>
+
+<h2>Task 4 - Margin Between Boxes</h2>
+<div class="box"></div>
+<div class="box"></div>
+
+<h2>Task 5 - Background and Border</h2>
+<div class="color-box"></div>
+
+<h2>Task 6 - Card</h2>
+<div class="card">
+    <h3>Card Title</h3>
+    <p>This is a simple card using width, padding, and border.</p>
+</div>
+
+<h2>Task 7 - Three Boxes with Margin</h2>
+<div class="container">
+    <div class="small-box"></div>
+    <div class="small-box"></div>
+    <div class="small-box"></div>
+</div>
+
+<h2>Task 8 - Border Styles</h2>
+<div class="solid">Solid Border</div>
+<div class="dashed">Dashed Border</div>
+<div class="dotted">Dotted Border</div>
+
+<h2>Task 9 - Centered Box</h2>
+<div class="center-box">
+    Centered Box
+</div>
+
+<h2>Task 10 - Profile Card</h2>
+<div class="profile-card">
+    <div class="image">
+        <img src="Image/profile.jpg" alt="Profile Picture">
+    </div>
+
+    <h2>Kalaiselvi</h2>
+    <p>
+        Web developer passionate about creating responsive and
+        user-friendly websites using HTML, CSS, and JavaScript.
+    </p>
+</div>
+
+</body>
+</html>
