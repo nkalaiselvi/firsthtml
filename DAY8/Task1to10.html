@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Tasks</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:20px;
+}
+
+section{
+    background:#fff;
+    margin-bottom:40px;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 5px gray;
+}
+
+h2{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.box{
+    background:steelblue;
+    color:white;
+    padding:20px;
+    text-align:center;
+    border-radius:5px;
+}
+
+/*-----------------------------
+Task 1
+-----------------------------*/
+.task1{
+    display:flex;
+}
+
+.task1 .box{
+    width:100px;
+    margin:5px;
+}
+
+/*-----------------------------
+Task 2
+-----------------------------*/
+.task2{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:200px;
+    border:2px solid gray;
+}
+
+/*-----------------------------
+Task 3
+-----------------------------*/
+.task3{
+    display:flex;
+    flex-direction:column;
+}
+
+.task3 .box{
+    margin:5px;
+}
+
+/*-----------------------------
+Task 4
+-----------------------------*/
+.task4{
+    display:flex;
+    justify-content:space-between;
+}
+
+.task4 .box{
+    width:100px;
+}
+
+/*-----------------------------
+Task 5
+-----------------------------*/
+.task5{
+    display:flex;
+    gap:20px;
+}
+
+.task5 .box{
+    width:100px;
+}
+
+/*-----------------------------
+Task 6
+-----------------------------*/
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#333;
+    color:white;
+    padding:15px;
+}
+
+.menu{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+/*-----------------------------
+Task 7
+-----------------------------*/
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:300px;
+}
+
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:250px;
+    padding:20px;
+    background:white;
+    box-shadow:0 0 10px gray;
+}
+
+.login-form input{
+    padding:10px;
+}
+
+.login-form button{
+    padding:10px;
+    background:steelblue;
+    color:white;
+    border:none;
+}
+
+/*-----------------------------
+Task 8
+-----------------------------*/
+.cards{
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    flex:1;
+    background:white;
+    padding:20px;
+    box-shadow:0 0 5px gray;
+    text-align:center;
+}
+
+/*-----------------------------
+Task 9
+-----------------------------*/
+.horizontal-menu{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    background:#444;
+    padding:15px;
+    color:white;
+}
+
+/*-----------------------------
+Task 10
+-----------------------------*/
+.dashboard{
+    display:flex;
+    height:300px;
+}
+
+.sidebar{
+    width:220px;
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+}
+
+.content{
+    flex:1;
+    background:#ecf0f1;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- ========================= -->
+<!-- Task 1 -->
+<!-- ========================= -->
+<section>
+<h2>Task 1 - Create Flex Container with 3 Boxes</h2>
+
+<div class="task1">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 2 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 2 - Align Items in Center</h2>
+
+<div class="task2">
+<div class="box">Centered Box</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 3 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 3 - Flex Direction Column</h2>
+
+<div class="task3">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 4 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 4 - justify-content: space-between</h2>
+
+<div class="task4">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 5 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 5 - Gap Between Flex Items</h2>
+
+<div class="task5">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 6 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 6 - Navbar Using Flexbox</h2>
+
+<nav class="navbar">
+
+<h3>My Logo</h3>
+
+<ul class="menu">
+<li>Home</li>
+<li>About</li>
+<li>Services</li>
+<li>Contact</li>
+</ul>
+
+</nav>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 7 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 7 - Center Login Form</h2>
+
+<div class="login-container">
+
+<form class="login-form">
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<button>Login</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 8 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 8 - Card Layout</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Card 1</h3>
+<p>Flexbox Card</p>
+</div>
+
+<div class="card">
+<h3>Card 2</h3>
+<p>Flexbox Card</p>
+</div>
+
+<div class="card">
+<h3>Card 3</h3>
+<p>Flexbox Card</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 9 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 9 - Horizontal Menu</h2>
+
+<ul class="horizontal-menu">
+<li>Home</li>
+<li>Products</li>
+<li>Gallery</li>
+<li>Contact</li>
+</ul>
+
+</section>
+
+<!-- ========================= -->
+<!-- Task 10 -->
+<!-- ========================= -->
+<section>
+
+<h2>Task 10 - Dashboard Layout</h2>
+
+<div class="dashboard">
+
+<div class="sidebar">
+<h3>Sidebar</h3>
+<p>Dashboard Menu</p>
+</div>
+
+<div class="content">
+<h3>Content Area</h3>
+<p>This is the main content using Flexbox.</p>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
