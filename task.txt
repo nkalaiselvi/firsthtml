@@ -13,3 +13,17 @@ flex grow
 flex shrink
 flex basics 
 align self
+
+
+Easy way to remember
+order → "Who comes first?"
+flex-grow → "Who grows bigger?"
+flex-shrink → "Who shrinks more?"
+flex-basis → "Starting size."
+align-self → "Move only this one item."
+
+Changes display order of items
+flex-grow	0	Controls how much extra space an item gets
+flex-shrink	1	Controls how much an item shrinks
+flex-basis	auto	Sets the initial size of an item
+align-self	auto	Aligns one specific item on the cross axis
