@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  border: 2px solid black;
+  height: 100px;
+  margin: 200px;
+}
+
+.box {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.box1 {
+  background: red;
+  flex-grow: 1;
+}
+
+.box2 {
+  background: blue;
+  flex-grow: 2; /*Uses extra available space. flex-grow: 2 grows twice as much as*/
+                                    
+}
+
+.box3 {
+  background: green;
+  flex-grow: 3;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+</div>
+
+</body>
+</html>

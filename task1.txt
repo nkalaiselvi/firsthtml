@@ -1,0 +1,13 @@
+
+
+choices
+pixcel1
+percentage
+
+viewport width, height, 
+row font size rem
+em parent font size
+auto value
+fit, min, max
+
+felx box 2d dimentional layout

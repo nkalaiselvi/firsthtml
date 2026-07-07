@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    display: flex;
+    height: 250px;
+    border: 2px solid black;
+    align-items: center; /* All items are centered */
+}
+
+.box {
+    width: 80px;
+    height: 80px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    margin: 10px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+    align-self: flex-start; /* Moves to the top */
+}
+
+.blue {
+    background: blue;
+    align-self: flex-end; /* Moves to the bottom, Aligns one specific flex item. */
+}
+</style>
+</head>
+<body>
+
+<h2>align-self Example</h2>
+
+<div class="container">
+    <div class="box red">Red</div>
+    <div class="box green">Green</div>
+    <div class="box blue">Blue</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    display: flex;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.box {
+    flex-basis: 150px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.red {
+    background: red;
+    flex-shrink: 1;
+}
+
+.green {
+    background: green;
+    flex-shrink: 2; /*Green shrinks twice as much as the others.*/
+}
+
+.blue {
+    background: blue;
+    flex-shrink: 1;
+}
+</style>
+</head>
+<body>
+
+<h2>flex-shrink Example</h2>
+
+<div class="container">
+    <div class="box red">1</div>
+    <div class="box green">2</div>
+    <div class="box blue">3</div>
+</div>
+
+</body>
+</html>
