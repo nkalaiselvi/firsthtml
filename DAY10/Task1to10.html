@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Grid & Flexbox Tasks</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+h2{
+    margin:20px 0 10px;
+}
+
+section{
+    margin:30px;
+}
+
+/* Header - Flexbox */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#222;
+    color:white;
+    padding:20px;
+}
+
+header nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+/* Common Box */
+.box{
+    background:#4CAF50;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:5px;
+}
+
+/* Task 1 */
+.grid3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+/* Task 2 */
+.grid2x2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:100px 100px;
+    gap:10px;
+}
+
+/* Task 3 */
+.repeat4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+/* Task 4 */
+.gapGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* Task 5 */
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border:1px solid #ccc;
+    padding:20px;
+    text-align:center;
+}
+
+/* Task 6 */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* Task 7 */
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#2196F3;
+    color:white;
+    padding:40px;
+    text-align:center;
+    border-radius:8px;
+}
+
+/* Task 8 */
+.uneven{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:80px 150px 100px;
+    gap:10px;
+}
+
+/* Task 9 */
+.layout{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+/* Task 10 */
+.shop{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.shop .item{
+    background:white;
+    border:1px solid #ccc;
+    text-align:center;
+    padding:15px;
+}
+
+.shop img{
+    width:150px;
+    height:200px;
+    object-fit:cover;
+}
+
+button{
+    margin-top:10px;
+    padding:10px 20px;
+    background:green;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <h1>CSS Grid & Flexbox Demo</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- Task 1 -->
+<section>
+<h2>Task 1 - 3 Column Grid</h2>
+
+<div class="grid3">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+</div>
+
+</section>
+
+<!-- Task 2 -->
+<section>
+
+<h2>Task 2 - 2 Rows & 2 Columns</h2>
+
+<div class="grid2x2">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+</div>
+
+</section>
+
+<!-- Task 3 -->
+<section>
+
+<h2>Task 3 - repeat(4,1fr)</h2>
+
+<div class="repeat4">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+</div>
+
+</section>
+
+<!-- Task 4 -->
+<section>
+
+<h2>Task 4 - Grid Gap</h2>
+
+<div class="gapGrid">
+<div class="box">A</div>
+<div class="box">B</div>
+<div class="box">C</div>
+<div class="box">D</div>
+<div class="box">E</div>
+<div class="box">F</div>
+</div>
+
+</section>
+
+<!-- Task 5 -->
+<section>
+
+<h2>Task 5 - Product Grid</h2>
+
+<div class="products">
+<div class="product">Product 1</div>
+<div class="product">Product 2</div>
+<div class="product">Product 3</div>
+<div class="product">Product 4</div>
+<div class="product">Product 5</div>
+<div class="product">Product 6</div>
+</div>
+
+</section>
+
+<!-- Task 6 -->
+<section>
+
+<h2>Task 6 - Image Gallery</h2>
+
+<div class="gallery">
+<img src="m1.jpg">
+<img src="m2.jpg">
+<img src="m3.jpg">
+<img src="m4.jpg">
+<img src="m5.jpg">
+<img src="m6.jpg">
+</div>
+
+</section>
+
+<!-- Task 7 -->
+<section>
+
+<h2>Task 7 - Dashboard</h2>
+
+<div class="dashboard">
+<div class="card">Users</div>
+<div class="card">Orders</div>
+<div class="card">Revenue</div>
+<div class="card">Messages</div>
+</div>
+
+</section>
+
+<!-- Task 8 -->
+<section>
+
+<h2>Task 8 - Uneven Grid</h2>
+
+<div class="uneven">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+</div>
+
+</section>
+
+<!-- Task 9 -->
+<section>
+
+<h2>Task 9 - Flexbox Header + Grid Body</h2>
+
+<div class="layout">
+<div class="box">Content 1</div>
+<div class="box">Content 2</div>
+<div class="box">Content 3</div>
+<div class="box">Content 4</div>
+<div class="box">Content 5</div>
+<div class="box">Content 6</div>
+</div>
+
+</section>
+
+<!-- Task 10 -->
+<section>
+
+<h2>Task 10 - Mini eCommerce</h2>
+
+<div class="shop">
+
+<div class="item">
+<img src="pro1.jpg">
+<h3>Product 1</h3>
+<p>$100</p>
+<button>Buy Now</button>
+</div>
+
+<div class="item">
+<img src="pro2.jpg">
+<h3>Product 2</h3>
+<p>$120</p>
+<button>Buy Now</button>
+</div>
+
+<div class="item">
+<img src="pro3.jpg">
+<h3>Product 3</h3>
+<p>$140</p>
+<button>Buy Now</button>
+</div>
+
+<div class="item">
+<img src="pro4.jpg">
+<h3>Product 4</h3>
+<p>$160</p>
+<button>Buy Now</button>
+</div>
+
+<div class="item">
+<img src="pro5.jpeg">
+<h3>Product 5</h3>
+<p>$180</p>
+<button>Buy Now</button>
+</div>
+
+<div class="item">
+<img src="pro6.jpg">
+<h3>Product 6</h3>
+<p>$200</p>
+<button>Buy Now</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2026 CSS Grid & Flexbox Assignment</p>
+</footer>
+
+</body>
+</html>

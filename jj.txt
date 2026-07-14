@@ -1,0 +1,10 @@
+what is responsive design
+flexible image-max width 100per height auto
+image never become then the container.
+meta information: 
+page width eqaul device 
+defalut zoom level
+
+cdn
+timeend and bootstrap
+tai

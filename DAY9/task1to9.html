@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Tasks</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:20px;
+}
+
+h3{
+    background:#333;
+    color:white;
+    padding:8px;
+}
+
+.container{
+    display:flex;
+    border:2px solid black;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.box{
+    width:60px;
+    height:60px;
+    background:skyblue;
+    border:1px solid black;
+    text-align:center;
+    line-height:60px;
+}
+
+/* Task 1 */
+.center{
+    justify-content:center;
+}
+
+/* Task 2 */
+.end{
+    justify-content:flex-end;
+}
+
+/* Task 3 */
+.between{
+    justify-content:space-between;
+}
+
+/* Task 4 */
+.nav-around{
+    display:flex;
+    justify-content:space-around;
+    background:#444;
+    padding:10px;
+}
+.nav-around a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Task 5 */
+.vertical{
+    display:flex;
+    align-items:center;
+    height:150px;
+    border:2px solid black;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+/* Task 6 */
+.nav-evenly{
+    display:flex;
+    justify-content:space-evenly;
+    background:steelblue;
+    padding:10px;
+}
+.nav-evenly a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Task 7 */
+.login{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:250px;
+    border:2px solid black;
+    margin-bottom:20px;
+}
+form{
+    border:1px solid #000;
+    padding:20px;
+}
+
+/* Task 8 */
+.cards{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+.card{
+    width:120px;
+    height:100px;
+    background:lightgreen;
+    border:1px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Task 9 */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#222;
+    color:white;
+    padding:10px 20px;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+}
+</style>
+
+</head>
+<body>
+
+<h3>Task 1: justify-content: center</h3>
+<div class="container center">
+    <div class="box">1</div>
+    <div class="box">2</div>
+</div>
+
+<h3>Task 2: justify-content: flex-end</h3>
+<div class="container end">
+    <div class="box">1</div>
+    <div class="box">2</div>
+</div>
+
+<h3>Task 3: justify-content: space-between</h3>
+<div class="container between">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<h3>Task 4: Navigation with space-around</h3>
+<nav class="nav-around">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<h3>Task 5: align-items: center</h3>
+<div class="vertical">
+    <div class="box">1</div>
+    <div class="box">2</div>
+</div>
+
+<h3>Task 6: Navbar with space-evenly</h3>
+<nav class="nav-evenly">
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+</nav>
+
+<h3>Task 7: Centered Login Form</h3>
+<div class="login">
+    <form>
+        <input type="text" placeholder="Username"><br><br>
+        <input type="password" placeholder="Password"><br><br>
+        <button>Login</button>
+    </form>
+</div>
+
+<h3>Task 8: Card Layout with space-between</h3>
+<div class="cards">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+</div>
+
+<h3>Task 9: Header with Logo Left & Menu Right</h3>
+<header>
+    <h3>LOGO</h3>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</header>
+</body>
+</html>

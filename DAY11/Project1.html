@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Layout Template</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    grid-template-rows:80px 1fr 60px;
+
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+
+    height:100vh;
+    gap:10px;
+    padding:10px;
+}
+
+header{
+    grid-area:header;
+    background:#3498db;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+aside{
+    grid-area:sidebar;
+    background:#2ecc71;
+    color:white;
+    padding:20px;
+}
+
+aside ul{
+    list-style:none;
+}
+
+aside li{
+    margin:15px 0;
+}
+
+main{
+    grid-area:content;
+    background:white;
+    padding:20px;
+    border:1px solid #ccc;
+}
+
+footer{
+    grid-area:footer;
+    background:#34495e;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@media(max-width:768px){
+
+.container{
+    grid-template-columns:1fr;
+
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "content"
+        "footer";
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        Website Header
+    </header>
+
+    <aside>
+        <h2>Sidebar</h2>
+        <ul>
+            <li>🏠 Home</li>
+            <li>👤 About</li>
+            <li>📂 Services</li>
+            <li>📞 Contact</li>
+        </ul>
+    </aside>
+
+    <main>
+        <h2>Main Content</h2>
+        <p>
+            This is the main content section of the website.
+            The layout is created using CSS Grid with
+            <strong>grid-template-areas</strong>.
+        </p>
+
+        <p>
+            The page includes a Header, Sidebar, Content area,
+            and Footer arranged in a clean grid structure.
+        </p>
+    </main>
+
+    <footer>
+        © 2026 Website Footer
+    </footer>
+
+</div>
+
+</body>
+</html>

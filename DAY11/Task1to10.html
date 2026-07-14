@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Grid Tasks (1-10)</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:20px;
+}
+
+h2{
+    margin:20px 0 10px;
+    color:#333;
+}
+
+.task{
+    margin-bottom:40px;
+}
+
+/* Common Box Style */
+.task div,
+.task header,
+.task nav,
+.task aside,
+.task main,
+.task footer{
+    padding:20px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+}
+
+.grid{
+    display:grid;
+    gap:10px;
+}
+
+/* ==========================
+Task 1
+========================== */
+
+.task1{
+    grid-template-columns:200px 1fr;
+    grid-template-rows:70px 180px 60px;
+
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.task1 header{grid-area:header;background:#3498db;}
+.task1 aside{grid-area:sidebar;background:#e67e22;}
+.task1 main{grid-area:content;background:#2ecc71;}
+.task1 footer{grid-area:footer;background:#555;}
+
+/* ==========================
+Task 2
+========================== */
+
+.task2{
+    grid-template-columns:250px 1fr;
+
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.task2 header{grid-area:header;background:#9b59b6;}
+.task2 aside{grid-area:sidebar;background:#f39c12;}
+.task2 main{grid-area:content;background:#16a085;}
+.task2 footer{grid-area:footer;background:#2c3e50;}
+
+/* ==========================
+Task 3
+========================== */
+
+.task3{
+    grid-template-columns:1fr 1fr;
+
+    grid-template-areas:
+    "left right";
+}
+
+.left{
+    grid-area:left;
+    background:#3498db;
+}
+
+.right{
+    grid-area:right;
+    background:#e74c3c;
+}
+
+/* ==========================
+Task 4
+========================== */
+
+.task4{
+    grid-template-columns:200px 1fr;
+
+    grid-template-areas:
+    "header header"
+    "sidebar ."
+    "footer footer";
+}
+
+.task4 header{grid-area:header;background:#1abc9c;}
+.task4 aside{grid-area:sidebar;background:#8e44ad;}
+.task4 footer{grid-area:footer;background:#34495e;}
+
+/* ==========================
+Task 5
+========================== */
+
+.task5{
+    grid-template-columns:200px 1fr;
+
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.task5 header{grid-area:header;background:red;}
+.task5 aside{grid-area:sidebar;background:green;}
+.task5 main{grid-area:content;background:orange;color:black;}
+.task5 footer{grid-area:footer;background:blue;}
+
+/* ==========================
+Task 6
+========================== */
+
+.task6{
+    grid-template-columns:180px 1fr 180px;
+
+    grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+}
+
+.task6 header{grid-area:header;background:#3498db;}
+.task6 nav{grid-area:nav;background:#27ae60;}
+.task6 main{grid-area:main;background:#95a5a6;}
+.task6 aside{grid-area:aside;background:#e67e22;}
+.task6 footer{grid-area:footer;background:#2c3e50;}
+
+/* ==========================
+Task 7
+========================== */
+
+.task7{
+    grid-template-columns:200px 1fr;
+    grid-template-rows:70px 180px 60px;
+
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.task7 header{grid-area:header;background:#2980b9;}
+.task7 aside{grid-area:sidebar;background:#555;}
+.task7 main{grid-area:content;background:#bdc3c7;color:black;}
+.task7 footer{grid-area:footer;background:black;}
+
+/* ==========================
+Task 8
+========================== */
+
+.task8{
+    grid-template-columns:1fr 3fr;
+
+    grid-template-areas:
+    "menu content";
+}
+
+.menu{
+    grid-area:menu;
+    background:#c0392b;
+}
+
+.content{
+    grid-area:content;
+    background:#27ae60;
+}
+
+/* ==========================
+Task 9
+========================== */
+
+.task9{
+    grid-template-columns:200px 1fr;
+
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.task9 header{grid-area:header;background:#8e44ad;}
+.task9 aside{grid-area:sidebar;background:#16a085;}
+.task9 main{grid-area:content;background:#f39c12;}
+.task9 footer{grid-area:footer;background:#2c3e50;}
+
+@media(max-width:768px){
+
+.task9{
+grid-template-columns:1fr;
+
+grid-template-areas:
+"header"
+"sidebar"
+"content"
+"footer";
+}
+
+}
+
+/* ==========================
+Task 10
+========================== */
+
+.task10{
+    height:400px;
+
+    grid-template-columns:220px 1fr;
+
+    grid-template-rows:70px 1fr 60px;
+
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+.task10 header{
+grid-area:header;
+background:#1abc9c;
+}
+
+.task10 nav{
+grid-area:sidebar;
+background:#34495e;
+}
+
+.task10 main{
+grid-area:main;
+background:#ecf0f1;
+color:black;
+}
+
+.task10 footer{
+grid-area:footer;
+background:#2c3e50;
+}
+</style>
+
+</head>
+<body>
+
+<h1>CSS Grid Tasks 1–10</h1>
+
+<!-- Task 1 -->
+<div class="task">
+<h2>Task 1</h2>
+
+<div class="grid task1">
+<header>Header</header>
+<aside>Sidebar</aside>
+<main>Content</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 2 -->
+<div class="task">
+<h2>Task 2</h2>
+
+<div class="grid task2">
+<header>Header</header>
+<aside>Sidebar</aside>
+<main>Content</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 3 -->
+<div class="task">
+<h2>Task 3</h2>
+
+<div class="grid task3">
+<div class="left">Left Column</div>
+<div class="right">Right Column</div>
+</div>
+
+</div>
+
+<!-- Task 4 -->
+<div class="task">
+<h2>Task 4</h2>
+
+<div class="grid task4">
+<header>Header</header>
+<aside>Sidebar</aside>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 5 -->
+<div class="task">
+<h2>Task 5</h2>
+
+<div class="grid task5">
+<header>Header</header>
+<aside>Sidebar</aside>
+<main>Content</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 6 -->
+<div class="task">
+<h2>Task 6</h2>
+
+<div class="grid task6">
+<header>Header</header>
+<nav>Navigation</nav>
+<main>Main Content</main>
+<aside>Right Panel</aside>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 7 -->
+<div class="task">
+<h2>Task 7</h2>
+
+<div class="grid task7">
+<header>Header</header>
+<aside>Fixed Sidebar</aside>
+<main>Main Content</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 8 -->
+<div class="task">
+<h2>Task 8</h2>
+
+<div class="grid task8">
+<div class="menu">Menu</div>
+<div class="content">Content</div>
+</div>
+
+</div>
+
+<!-- Task 9 -->
+<div class="task">
+<h2>Task 9 (Responsive)</h2>
+
+<div class="grid task9">
+<header>Header</header>
+<aside>Sidebar</aside>
+<main>Content</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+<!-- Task 10 -->
+<div class="task">
+<h2>Task 10 (Challenge)</h2>
+
+<div class="grid task10">
+<header>Header</header>
+<nav>Sidebar Menu</nav>
+<main>Main Content Section</main>
+<footer>Footer</footer>
+</div>
+
+</div>
+
+</body>
+</html>

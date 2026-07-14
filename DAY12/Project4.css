@@ -1,0 +1,93 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+/* Dashboard Layout */
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+    width:220px;
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:12px 0;
+    cursor:pointer;
+}
+
+.sidebar li:hover{
+    color:#1abc9c;
+}
+
+/* Main Content */
+.main{
+    flex:1;
+    padding:20px;
+}
+
+header{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px){
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    /* Sidebar collapses */
+    .sidebar{
+        display:none;
+    }
+
+    .main{
+        width:100%;
+        padding:15px;
+    }
+
+    /* Cards become one column */
+    .cards{
+        grid-template-columns:1fr;
+    }
+}

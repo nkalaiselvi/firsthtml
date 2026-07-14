@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#121212;
+    color:white;
+}
+
+/* Header */
+
+header{
+    background:#0d6efd;
+    text-align:center;
+    padding:30px;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:center;
+    background:#1b1b1b;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#0d6efd;
+    color:#fff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:60px;
+    background:#1e1e1e;
+}
+
+.hero img{
+    width:400px;
+    border-radius:12px;
+}
+
+.hero button{
+    padding:12px 25px;
+    margin-top:20px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.08);
+    background:#4da3ff;
+}
+
+/* Sections */
+
+section{
+    padding:80px 10%;
+}
+
+/* Grid Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#242424;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.4);
+    transition:.4s;
+}
+
+.card i{
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.6);
+}
+
+/* Contact */
+
+.contact-form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border:none;
+    border-radius:5px;
+}
+
+.contact-form button{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#4da3ff;
+}
+
+/* Footer */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero img{
+    width:100%;
+    max-width:350px;
+    margin-top:30px;
+}
+
+nav{
+    flex-direction:column;
+}
+
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Design Tasks</title>
+
+<style>
+/* --------------------
+   Mobile First Design
+---------------------*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:lightyellow;
+    padding:20px;
+}
+
+/* Task 2 */
+h1{
+    text-align:center;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+/* Task 3 */
+.flex-box{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:20px 0;
+}
+
+.flex-box div{
+    background:skyblue;
+    padding:20px;
+    text-align:center;
+}
+
+/* Task 4 */
+.two-column{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin:20px 0;
+}
+
+.two-column div{
+    background:lightgreen;
+    padding:20px;
+}
+
+/* Task 5 */
+img{
+    width:100%;
+    height:auto;
+    margin:20px 0;
+}
+
+/* Task 6 */
+.navbar{
+    display:flex;
+    flex-direction:column;
+    background:#333;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    text-align:center;
+}
+
+/* Task 7 */
+.cards{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin:20px 0;
+}
+
+.card{
+    background:#ddd;
+    padding:20px;
+    text-align:center;
+}
+
+/* Task 8 */
+.grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin:20px 0;
+}
+
+.grid div{
+    background:orange;
+    padding:20px;
+    text-align:center;
+}
+
+/* Task 10 */
+.header,
+.footer{
+    background:#444;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.main-cards{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin:20px 0;
+}
+
+.main-card{
+    background:#bde0fe;
+    padding:20px;
+    text-align:center;
+}
+
+/* --------------------
+   Desktop View
+---------------------*/
+@media (min-width:768px){
+
+    /* Task 1 */
+    body{
+        background:lightblue;
+    }
+
+    /* Task 2 */
+    h1{
+        font-size:40px;
+    }
+
+    /* Task 3 */
+    .flex-box{
+        flex-direction:row;
+    }
+
+    /* Task 4 */
+    .two-column{
+        grid-template-columns:1fr 1fr;
+    }
+
+    /* Task 6 */
+    .navbar{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    .navbar a{
+        flex:1;
+    }
+
+    /* Task 7 */
+    .cards{
+        flex-direction:row;
+    }
+
+    .card{
+        flex:1;
+    }
+
+    /* Task 8 */
+    .grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    /* Task 10 */
+    .main-cards{
+        flex-direction:row;
+    }
+
+    .main-card{
+        flex:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Task 10 Header -->
+<header class="header">
+    <h1>Responsive Webpage</h1>
+</header>
+
+<!-- Task 6 Navbar -->
+<nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- Task 3 -->
+<h2>Task 3 - Flex Row to Column</h2>
+<div class="flex-box">
+    <div>Box 1</div>
+    <div>Box 2</div>
+    <div>Box 3</div>
+</div>
+
+<!-- Task 4 -->
+<h2>Task 4 - Responsive 2 Column Layout</h2>
+<div class="two-column">
+    <div>Column 1</div>
+    <div>Column 2</div>
+</div>
+
+<!-- Task 5 -->
+<h2>Task 5 - Responsive Image</h2>
+<img src="m1.jpg" alt="Sample Image">
+
+<!-- Task 7 -->
+<h2>Task 7 - Responsive Cards</h2>
+<div class="cards">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+</div>
+
+<!-- Task 8 -->
+<h2>Task 8 - Responsive Grid</h2>
+<div class="grid">
+    <div>Grid 1</div>
+    <div>Grid 2</div>
+    <div>Grid 3</div>
+    <div>Grid 4</div>
+    <div>Grid 5</div>
+    <div>Grid 6</div>
+</div>
+
+<!-- Task 10 Cards -->
+<section class="main-cards">
+    <div class="main-card">Card A</div>
+    <div class="main-card">Card B</div>
+    <div class="main-card">Card C</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Responsive Webpage</p>
+</footer>
+
+</body>
+</html>
