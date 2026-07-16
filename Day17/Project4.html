@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+// ====================================
+// Project 4: Login Attempt System
+// Maximum 3 attempts
+// ====================================
+console.log("\nProject 4: Login Attempt");
+
+const username = "admin";
+const password = "12345";
+
+let success = false;
+
+for (let attempt = 1; attempt <= 3; attempt++) {
+
+    let user = prompt("Enter Username:");
+    let pass = prompt("Enter Password:");
+
+    if (user === username && pass === password) {
+        alert("Login Successful!");
+        console.log("Login Successful!");
+        success = true;
+        break;
+    } else {
+        alert("Incorrect Username or Password");
+        console.log("Attempt " + attempt + " Failed");
+    }
+}
+
+if (!success) {
+    alert("System Locked! Maximum attempts reached.");
+    console.log("System Locked!");
+}
+    </script>
+</body>
+</html>

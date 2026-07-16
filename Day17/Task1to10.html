@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         // ===========================
+// Task 1: Print numbers 1 to 10 using for loop
+// ===========================
+console.log("Task 1");
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+// ===========================
+// Task 2: Print even numbers from 1 to 20
+// ===========================
+console.log("\nTask 2");
+for (let i = 2; i <= 20; i += 2) {
+    console.log(i);
+}
+
+// ===========================
+// Task 3: Print reverse numbers from 10 to 1
+// ===========================
+console.log("\nTask 3");
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+
+// ===========================
+// Task 4: Use while loop to print 1–5
+// ===========================
+console.log("\nTask 4");
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+
+// ===========================
+// Task 5: Use do-while loop
+// ===========================
+console.log("\nTask 5");
+let j = 1;
+do {
+    console.log(j);
+    j++;
+} while (j <= 5);
+
+// ===========================
+// Task 6: Print multiplication table of 5
+// ===========================
+console.log("\nTask 6");
+for (let k = 1; k <= 10; k++) {
+    console.log(`5 x ${k} = ${5 * k}`);
+}
+
+// ===========================
+// Task 7: Loop through array of 5 names
+// ===========================
+console.log("\nTask 7");
+let names = ["Alice", "Bob", "Charlie", "David", "Emma"];
+
+for (let name of names) {
+    console.log(name);
+}
+
+// ===========================
+// Task 8: Find sum of numbers from 1 to 10
+// ===========================
+console.log("\nTask 8");
+let sum = 0;
+
+for (let n = 1; n <= 10; n++) {
+    sum += n;
+}
+
+console.log("Sum =", sum);
+
+// ===========================
+// Task 9: Print all odd numbers
+// ===========================
+console.log("\nTask 9");
+for (let n = 1; n <= 20; n += 2) {
+    console.log(n);
+}
+
+// ===========================
+// Task 10: Login attempt system
+// ===========================
+console.log("\nTask 10");
+
+const correctPassword = "admin123";
+let loggedIn = false;
+
+for (let attempt = 1; attempt <= 3; attempt++) {
+    let password = prompt(`Attempt ${attempt}/3\nEnter Password:`);
+
+    if (password === correctPassword) {
+        console.log("Login Successful!");
+        alert("Login Successful!");
+        loggedIn = true;
+        break;
+    } else {
+        alert("Incorrect Password");
+    }
+}
+
+if (!loggedIn) {
+    console.log("System Locked!");
+    alert("System Locked! Too many failed attempts.");
+}
+
+
+
+    </script>
+</body>
+</html>

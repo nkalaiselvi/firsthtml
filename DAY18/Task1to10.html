@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day18 Task 1 to 10</title>
+</head>
+<body>
+    <script>
+        // Task 1: Function to print your name
+function printName() {
+    console.log("Kalai");
+}
+printName();
+
+
+// Task 2: Function to add two numbers
+function add(a, b) {
+    return a + b;
+}
+console.log("Addition:", add(10, 5));
+
+
+// Task 3: Function to subtract two numbers
+function subtract(a, b) {
+    return a - b;
+}
+console.log("Subtraction:", subtract(10, 5));
+
+
+// Task 4: Function to check even or odd
+function checkEvenOdd(num) {
+    if (num % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+console.log(checkEvenOdd(8));
+console.log(checkEvenOdd(7));
+
+
+// Task 5: Function with 3 parameters (sum)
+function sumThree(a, b, c) {
+    return a + b + c;
+}
+console.log("Sum of 3 numbers:", sumThree(10, 20, 30));
+
+
+// Task 6: Function that returns square of a number
+function square(num) {
+    return num * num;
+}
+console.log("Square:", square(6));
+
+
+// Task 7: Arrow function for multiplication
+const multiply = (a, b) => a * b;
+console.log("Multiplication:", multiply(4, 5));
+
+
+// Task 8: Simple Calculator Function
+function calculator(a, b, operator) {
+    switch (operator) {
+        case "+":
+            return a + b;
+        case "-":
+            return a - b;
+        case "*":
+            return a * b;
+        case "/":
+            return b !== 0 ? a / b : "Cannot divide by zero";
+        default:
+            return "Invalid operator";
+    }
+}
+
+console.log(calculator(20, 5, "+"));
+console.log(calculator(20, 5, "-"));
+console.log(calculator(20, 5, "*"));
+console.log(calculator(20, 5, "/"));
+
+
+// Task 9: Function to check voting eligibility
+function checkVotingEligibility(age) {
+    if (age >= 18) {
+        return "Eligible to vote";
+    } else {
+        return "Not eligible to vote";
+    }
+}
+
+console.log(checkVotingEligibility(20));
+console.log(checkVotingEligibility(16));
+
+
+// Task 10: Challenge - Login System
+function login(username, password) {
+    const correctUsername = "admin";
+    const correctPassword = "12345";
+
+    if (username === correctUsername && password === correctPassword) {
+        return "Login Successful";
+    } else {
+        return "Login Failed";
+    }
+}
+
+console.log(login("admin", "12345")); // Success
+console.log(login("user", "11111"));  // Fail
+    </script>
+</body>
+</html>

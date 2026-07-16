@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <script>
+        function calculateGrade(marks) {
+    if (marks >= 90) {
+        return "A";
+    } else if (marks >= 80) {
+        return "B";
+    } else if (marks >= 70) {
+        return "C";
+    } else if (marks >= 60) {
+        return "D";
+    } else {
+        return "Fail";
+    }
+}
+
+// Output
+console.log(calculateGrade(95)); // A
+console.log(calculateGrade(82)); // B
+console.log(calculateGrade(74)); // C
+console.log(calculateGrade(65)); // D
+console.log(calculateGrade(45)); // Fail
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User validation system</title>
+</head>
+<body>
+    <script>
+        function login(username, password) {
+    let correctUsername = "admin";
+    let correctPassword = "12345";
+
+    if (username === correctUsername && password === correctPassword) {
+        return "Login Successful";
+    } else {
+        return "Login Failed";
+    }
+}
+
+// Output
+console.log(login("admin", "12345"));
+console.log(login("admin", "11111"));
+    </script>
+</body>
+</html>
