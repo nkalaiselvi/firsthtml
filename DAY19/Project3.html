@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Shopping Cart System
+
+let cart = ["Milk", "Bread", "Eggs"];
+
+// Display initial cart
+console.log("Initial Shopping Cart:");
+for (let item of cart) {
+    console.log(item);
+}
+
+// Add item
+cart.push("Butter");
+
+console.log("\nAfter Adding Butter:");
+for (let item of cart) {
+    console.log(item);
+}
+
+// Remove last item
+cart.pop();
+
+console.log("\nAfter Removing Last Item:");
+for (let item of cart) {
+    console.log(item);
+}
+
+// Show total count
+console.log("\nTotal Items:", cart.length);
+    </script>
+</body>
+</html>

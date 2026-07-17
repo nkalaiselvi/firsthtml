@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ // Task 1: Create array of 5 fruits
+let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+
+// Task 2: Print first and last element
+console.log("First Fruit:", fruits[0]);
+console.log("Last Fruit:", fruits[fruits.length - 1]);
+
+// Task 3: Update second element
+fruits[1] = "Pineapple";
+console.log("After Updating Second Element:", fruits);
+
+// Task 4: Add new item using push()
+fruits.push("Watermelon");
+console.log("After Push:", fruits);
+console.log(fruits);
+
+// Task 5: Remove last item using pop()
+fruits.pop();
+console.log("After Pop:", fruits);
+console.log(fruits);
+
+// Task 6: Loop array using for loop
+console.log("Using for loop:");
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+// Task 7: Loop array using for...of
+console.log("Using for...of loop:");
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+// Task 8: Find length of array
+console.log("Array Length:", fruits.length);
+
+// Task 9: Create array of 5 student names and print them
+let students = ["Alice", "Bob", "Charlie", "David", "Emma"];
+
+console.log("Student Names:");
+for (let student of students) {
+    console.log(student);
+}
+
+// Task 10 (Challenge): Product List System
+let products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Monitor"];
+
+// Store 5 products
+console.log("Initial Products:", products);
+
+// Add new product
+products.push("Printer");
+console.log("After Adding Product:", products);
+
+// Remove one product
+products.pop();
+console.log("After Removing Product:", products);
+
+// Print final list
+console.log("Final Product List:");
+for (let product of products) {
+    console.log(product);
+}
+    </script>
+
+</body>
+</html>
