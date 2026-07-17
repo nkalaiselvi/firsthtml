@@ -7,59 +7,37 @@
 </head>
 <body>
     <script>
-// ================= Task 1 =================
-console.log("===== Task 1: Create Array of 5 Fruits =====");
-let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
-console.log(fruits);
-
-// ================= Task 2 =================
-console.log("\n===== Task 2: Print First and Last Element =====");
-console.log("First Fruit:", fruits[0]);
-console.log("Last Fruit:", fruits[fruits.length - 1]);
-
-// ================= Task 3 =================
-console.log("\n===== Task 3: Update Second Element =====");
-fruits[1] = "Pineapple";
-console.log(fruits);
-
-// ================= Task 4 =================
-console.log("\n===== Task 4: Add New Item Using push() =====");
-fruits.push("Watermelon");
-console.log(fruits);
-
-// ================= Task 5 =================
-console.log("\n===== Task 5: Remove Last Item Using pop() =====");
-fruits.pop();
-console.log(fruits);
-
-// ================= Task 6 =================
-console.log("\n===== Task 6: Loop Array Using for Loop =====");
-for (let i = 0; i < fruits.length; i++) {
-    console.log(fruits[i]);
-}
-
-// ================= Task 7 =================
-console.log("\n===== Task 7: Loop Array Using for...of =====");
-for (let fruit of fruits) {
-    console.log(fruit);
-}
-
-// ================= Task 8 =================
-console.log("\n===== Task 8: Find Length of Array =====");
-console.log("Length:", fruits.length);
-
-// ================= Task 9 =================
-console.log("\n===== Task 9: Student Names =====");
-let students = ["Alice", "Bob", "Charlie", "David", "Emma"];
-
-for (let student of students) {
-    console.log(student);
-}
-
-// ================= Task 10 =================
-console.log("\n===== Task 10: Product List System =====");
-
-let products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Monitor"];
+        console.log("Task1: Create Array of 5 fruits");
+        let fruits=["Apple", "Banana", "Mango", "Grapes", "Orange"];
+        console.log(fruits);
+        console.log("\n Task2: Print first and Last name");
+        console.log("First fruit: ", fruits[0]);
+        console.log("Last fruit: ",fruits[fruits.length-1]);
+        console.log("\n Task3: Update second Element");
+        fruits[1] = "Pineapple";
+        console.log(fruits);
+        console.log("\n Task4: Add new item using push()");
+        fruits.push("Watermelon");
+        console.log(fruits);
+        console.log("\n Task5: Remove last item using pop()");
+        fruits.pop();
+        console.log(fruits);
+        console.log("Task6: Loop array using for loop");
+        for(let i=0; i<fruits.length; i++){
+            console.log(fruits[1]);}
+        console.log("\n Task7: Loop array using for...of");
+        for(let fruit of fruits){
+            console.log(fruit); 
+        }
+        console.log("\n Task8: Find the length of array");
+        console.log("Length: ", fruits.length);
+        console.log("\n Task9: Student Names");
+        let students = ["Alice", "Bob", "Charlie", "David", "Emma"];
+        for (let student of students) {
+        console.log(student);
+        }
+    console.log("\n Task10: Product list items");
+    let products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Monitor"];
 
 // Display initial products
 console.log("Initial Product List:");
@@ -73,7 +51,7 @@ products.push("Printer");
 console.log("\nAfter Adding Printer:");
 for (let product of products) {
     console.log(product);
-}
+
 
 // Remove last product
 products.pop();
@@ -82,7 +60,8 @@ console.log("\nAfter Removing Last Product:");
 for (let product of products) {
     console.log(product);
 }
-    </script>
+}
+</script>
 
 </body>
 </html>
