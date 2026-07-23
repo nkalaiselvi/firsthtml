@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        input {
+            width: 250px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        .delete {
+            margin-left: 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Notes App</h2>
+
+    <input type="text" id="noteInput" placeholder="Enter a note">
+    <button onclick="addNote()">Add Note</button>
+
+    <ul id="noteList"></ul>
+
+    <script>
+
+        // Function to add a note
+        function addNote() {
+
+            // Get input value
+            let note = document.getElementById("noteInput").value;
+
+            // Check if input is empty
+            if (note == "") {
+                alert("Please enter a note.");
+                return;
+            }
+
+            // Create list item
+            let li = document.createElement("li");
+            li.innerHTML = note;
+
+            // Create delete button
+            let btn = document.createElement("button");
+            btn.innerHTML = "Remove";
+            btn.className = "delete";
+
+            // Remove note when button is clicked
+            btn.onclick = function () {
+                li.remove();
+            };
+
+            // Add button to list item
+            li.appendChild(btn);
+
+            // Display note
+            document.getElementById("noteList").appendChild(li);
+
+            // Clear input box
+            document.getElementById("noteInput").value = "";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+        }
+
+        #box {
+            width: 200px;
+            padding: 20px;
+            background: lightgray;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        #preview {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Event Handling Tasks</h2>
+
+    <!-- Task 1 & 5 -->
+    <button id="clickBtn">Click Me</button>
+
+    <!-- Task 2 -->
+    <button id="dblBtn">Double Click Me</button>
+
+    <!-- Task 3 & 4 -->
+    <div id="box">Move Mouse Here</div>
+
+    <!-- Task 6 -->
+    <h3>Display Input Text Live</h3>
+    <input type="text" id="liveInput" placeholder="Type something">
+    <p>Output: <span id="liveOutput"></span></p>
+    <!-- Task 7 -->
+    <button id="bgBtn">Change Background Color</button>
+
+    <!-- Task 8 -->
+    <h3>Keyup Event</h3>
+    <input type="text" id="keyupInput" placeholder="Press keys">
+    <p id="keyupText"></p>
+
+    <!-- Task 9 -->
+    <button id="eventBtn">addEventListener Button</button>
+
+    <!-- Task 10 -->
+    <h3>Live Username Preview</h3>
+    <input type="text" id="username" placeholder="Enter Username">
+    <p>Username Preview: <span id="preview"></span></p>
+
+<script>
+// Task 1 & Task 5 - Button Click Event + Alert
+document.getElementById("clickBtn").onclick = function () {
+    alert("Button Clicked!");
+};
+
+// Task 2 - Double Click Event
+document.getElementById("dblBtn").ondblclick = function () {
+    alert("Button Double Clicked!");
+};
+
+// Task 3 - Mouseover Effect
+document.getElementById("box").onmouseover = function () {
+    this.style.backgroundColor = "orange";
+};
+
+// Task 4 - Mouseout Effect
+document.getElementById("box").onmouseout = function () {
+    this.style.backgroundColor = "lightgray";
+};
+
+// Task 6 - Display Input Text Live
+document.getElementById("liveInput").oninput = function () {
+    document.getElementById("liveOutput").textContent = this.value;
+};
+
+// Task 7 - Change Background Color on Click
+document.getElementById("bgBtn").addEventListener("click", function () {
+    document.body.style.backgroundColor = "lightgreen";
+});
+
+// Task 8 - Keyup Event
+document.getElementById("keyupInput").onkeyup = function () {
+    document.getElementById("keyupText").textContent =
+        "You typed: " + this.value;
+};
+
+// Task 9 - addEventListener for Button
+document.getElementById("eventBtn").addEventListener("click", function () {
+    alert("Button clicked using addEventListener!");
+});
+
+// Task 10 - Live Username Preview System
+document.getElementById("username").addEventListener("input", function () {
+    document.getElementById("preview").textContent = this.value;
+});
+</script>
+
+</body>
+</html>

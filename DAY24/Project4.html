@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4: Product Search Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Project 4: Product Search Box</h2>
+
+    <label>Search Product:</label><br><br>
+
+    <input type="text" id="searchBox" placeholder="Type product name...">
+
+    <p id="result">Typed Product: </p>
+
+    <script>
+        const searchBox = document.getElementById("searchBox");
+        const result = document.getElementById("result");
+
+        // Show typed text live
+        searchBox.addEventListener("input", function () {
+            result.textContent = "Typed Product: " + this.value;
+        });
+    </script>
+
+</body>
+</html>

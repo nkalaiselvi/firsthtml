@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3: Theme Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Project 3: Theme Changer</h2>
+
+    <button id="themeBtn">Change Theme</button>
+
+    <script>
+        let darkMode = false;
+        const btn = document.getElementById("themeBtn");
+
+        // Change Theme on Button Click
+        btn.addEventListener("click", function () {
+            if (!darkMode) {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                darkMode = true;
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                darkMode = false;
+            }
+        });
+
+        // Mouseover Effect
+        btn.addEventListener("mouseover", function () {
+            btn.style.backgroundColor = "lightblue";
+        });
+
+        // Mouseout Effect
+        btn.addEventListener("mouseout", function () {
+            btn.style.backgroundColor = "";
+        });
+    </script>
+
+</body>
+</html>

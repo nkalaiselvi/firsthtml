@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <style>
+        body{
+            font-family:Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .card{
+            width:300px;
+            margin:20px auto;
+            padding:20px;
+            border:2px solid #333;
+            border-radius:10px;
+            box-shadow:2px 2px 8px gray;
+        }
+
+        h2{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Product Card Generator</h1>
+
+<button onclick="showProduct()">Show Product</button>
+
+<div id="product"></div>
+
+<script>
+
+function showProduct(){
+
+    // Product Details
+    let productName = "Wireless Mouse";
+    let price = "$25";
+    let category = "Electronics";
+
+    // Select the div
+    let product = document.getElementById("product");
+
+    // Create card
+    let card = document.createElement("div");
+    card.className = "card";
+
+    // Add product details
+    card.innerHTML =
+        "<h2>Product Card</h2>" +
+        "<p><b>Product Name:</b> " + productName + "</p>" +
+        "<p><b>Price:</b> " + price + "</p>" +
+        "<p><b>Category:</b> " + category + "</p>";
+
+    // Clear previous card
+    product.innerHTML = "";
+
+    // Display card
+    product.appendChild(card);
+}
+
+</script>
+
+</body>
+</html>

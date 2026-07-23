@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <style>
+        :root {
+            --bg-light: #f4f2ef;
+            --bg-dark: #242834;
+            --panel-light: #ffffff;
+            --panel-dark: #242a38;
+            --text-light: #171a2f;
+            --text-dark: #f4f2ef;
+            --accent: #f7b500;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f7a500 0%, #ffb94d 100%);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: min(900px, 95%);
+            background: var(--panel-light);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero {
+            padding: 48px 40px;
+            background: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 3vw, 4rem);
+            margin-bottom: 16px;
+            color: #101822;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #4b556a;
+            margin-bottom: 36px;
+        }
+
+        .switch-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f6fb;
+            padding: 40px;
+            position: relative;
+        }
+
+        .switch-box {
+            width: 100%;
+            max-width: 360px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 30px 60px rgba(16, 24, 40, 0.08);
+            text-align: center;
+        }
+
+        .toggle-label {
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #101822;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            margin: 0 auto 24px;
+            border-radius: 999px;
+            background: #e2e8f0;
+            cursor: pointer;
+        }
+
+        .toggle-track {
+            position: absolute;
+            inset: 0;
+            border-radius: 999px;
+            transition: background 0.25s ease;
+        }
+
+        .toggle-thumb {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(16, 24, 40, 0.12);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .toggle-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            color: #f7b500;
+        }
+
+        .toggle-icon.sun {
+            left: 18px;
+        }
+
+        .toggle-icon.moon {
+            right: 18px;
+            color: #1f2937;
+        }
+
+        .theme-text {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .dark body {
+            background: #101318;
+            color: var(--text-dark);
+        }
+
+        .dark .hero {
+            background: #181d2a;
+            color: #e2e8f0;
+        }
+
+        .dark .hero h1,
+        .dark .toggle-label {
+            color: #f8fafc;
+        }
+
+        .dark .hero p,
+        .dark .theme-text {
+            color: #cbd5e1;
+        }
+
+        .dark .switch-panel {
+            background: #12161f;
+        }
+
+        .dark .switch-box {
+            background: #1f2937;
+        }
+
+        .dark .toggle-switch {
+            background: #334155;
+        }
+
+        .dark .toggle-thumb {
+            background: #0f172a;
+        }
+
+        @media(max-width: 720px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .switch-panel {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="hero">
+            <h1>Theme Switcher</h1>
+            <p>Toggle between light and dark theme using the switch. The design updates the panel, background, and text colors to match the selected mode.</p>
+        </div>
+        <div class="switch-panel">
+            <div class="switch-box">
+                <span class="toggle-label">Choose a theme</span>
+                <div class="toggle-switch" id="themeToggle" onclick="toggleTheme()">
+                    <div class="toggle-track"></div>
+                    <div class="toggle-thumb" id="toggleThumb"></div>
+                    <span class="toggle-icon sun">☀️</span>
+                    <span class="toggle-icon moon">🌙</span>
+                </div>
+                <div class="theme-text" id="themeStatus">Light theme is active</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeStatus = document.getElementById('themeStatus');
+        const toggleThumb = document.getElementById('toggleThumb');
+        const toggleSwitch = document.getElementById('themeToggle');
+        let darkMode = false;
+
+        function updateToggle() {
+            if (darkMode) {
+                body.classList.add('dark');
+                themeStatus.textContent = 'Dark theme is active';
+                toggleThumb.style.transform = 'translateX(40px)';
+            } else {
+                body.classList.remove('dark');
+                themeStatus.textContent = 'Light theme is active';
+                toggleThumb.style.transform = 'translateX(0)';
+            }
+        }
+
+        function toggleTheme() {
+            darkMode = !darkMode;
+            updateToggle();
+        }
+
+        updateToggle();
+    </script>
+</body>
+</html>

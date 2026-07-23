@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body>
+    <!-- Task 1 -->
+<h2 id="heading">Old Heading</h2>
+<button onclick="task1()">Task 1</button>
+
+<br><br>
+
+<!-- Task 2 -->
+<p id="para"></p>
+<button onclick="task2()">Task 2</button>
+
+<br><br>
+
+<!-- Task 3 -->
+<button id="btn" onclick="task3()">Click Me</button>
+
+<br><br>
+
+<!-- Task 4 -->
+<h2 id="colorHeading">Change My Color</h2>
+<button onclick="task4()">Task 4</button>
+
+<br><br>
+
+<div id="box" style="width:200px; height:80px; border:1px solid rgb(243,76,76);">
+    Color Box
+</div>
+
+<br>
+
+<button onclick="task5()">Task 5</button>
+
+<br><br>
+
+<!-- Task 6 -->
+<input type="text" id="username" placeholder="Enter Username">
+<button onclick="task6()">Show Username</button>
+<p id="result"></p>
+
+<br><br>
+
+<!-- Task 7 -->
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="task7()">Welcome</button>
+<h3 id="welcome"></h3>
+
+<br><br>
+
+<!-- Task 8 -->
+<div id="html"></div>
+<button onclick="task8()">Insert HTML</button>
+
+<br><br>
+
+<!-- Task 9 -->
+<button onclick="task9()">Change Background</button>
+
+<br><br>
+
+<!-- Task 10 -->
+<h3>Profile Card</h3>
+<p>Name: <span id="pname">John</span></p>
+<p>Age: <span id="page">20</span></p>
+<p>City: <span id="pcity">New York</span></p>
+<button onclick="task10()">Update Profile</button>
+
+<script>
+
+// Task 1
+function task1() {
+    document.getElementById("heading").innerHTML = "New Heading";
+}
+
+// Task 2
+function task2() {
+    document.getElementById("para").innerHTML = "This is a new paragraph.";
+}
+
+// Task 3
+function task3() {
+    document.getElementById("btn").innerHTML = "Clicked";
+}
+
+// Task 4
+function task4() {
+    document.getElementById("colorHeading").style.color = "red";
+}
+
+// Task 5
+function task5() {
+    document.getElementById("box").style.backgroundColor = "yellow";
+}
+
+// Task 6
+function task6() {
+    document.getElementById("result").innerHTML =
+        document.getElementById("username").value;
+}
+
+// Task 7
+function task7() {
+    document.getElementById("welcome").innerHTML =
+        "Welcome " + document.getElementById("name").value;
+}
+
+// Task 8
+function task8() {
+    document.getElementById("html").innerHTML =
+        "<h3>Hello!</h3><p>This HTML is inserted using innerHTML.</p>";
+}
+
+// Task 9
+function task9() {
+    document.body.style.backgroundColor = "lightgreen";
+}
+
+
+// Task 10
+function task10() {
+    document.getElementById("pname").innerHTML = "Alice";
+    document.getElementById("page").innerHTML = "25";
+    document.getElementById("pcity").innerHTML = "London";
+}
+</script>
+</body>
+</html>

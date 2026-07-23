@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1: Create object for student details
+let student = {
+    name: "John",
+    age: 20,
+    course: "BCA",
+    marks: 85
+};
+
+console.log("Student Object:", student);
+
+
+// Task 2: Access object properties using dot notation
+console.log("Name:", student.name);
+console.log("Age:", student.age);
+
+
+// Task 3: Access object properties using bracket notation
+console.log("Course:", student["course"]);
+console.log("Marks:", student["marks"]);
+
+
+// Task 4: Update object value
+student.marks = 90;
+console.log("Updated Marks:", student.marks);
+
+
+// Task 5: Add new property
+student.city = "Chennai";
+console.log("After Adding City:", student);
+
+
+// Task 6: Delete one property
+delete student.age;
+console.log("After Deleting Age:", student);
+
+
+// Task 7: Loop object using for...in
+console.log("Student Details:");
+for (let key in student) {
+    console.log(key + " : " + student[key]);
+}
+
+
+// Task 8: Convert object to JSON
+let jsonData = JSON.stringify(student);
+console.log("JSON Data:", jsonData);
+
+
+// Task 9: Convert JSON to object
+let objData = JSON.parse(jsonData);
+console.log("Converted Object:", objData);
+
+
+// Task 10: Create employee object and print all details
+let employee = {
+    empId: 101,
+    empName: "Alice",
+    department: "IT",
+    salary: 50000,
+    location: "Bangalore"
+};
+
+console.log("Employee Details:");
+for (let key in employee) {
+    console.log(key + " : " + employee[key]);
+}
+    </script>
+</body>
+</html>

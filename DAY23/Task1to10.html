@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript DOM Tasks</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:20px;
+        background:#f4f4f4;
+    }
+
+    .task{
+        background:white;
+        border:1px solid #ccc;
+        padding:15px;
+        margin-bottom:20px;
+        border-radius:8px;
+    }
+
+    .card{
+        border:1px solid #000;
+        padding:10px;
+        width:220px;
+        margin-top:10px;
+    }
+
+    img{
+        width:200px;
+        height:150px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>JavaScript DOM Tasks</h1>
+
+<!-- ================= TASK 1 ================= -->
+<div class="task">
+<h2>Task 1: Change Heading Text</h2>
+
+<h3 id="heading">Welcome</h3>
+
+<button onclick="changeHeading()">Run Task 1</button>
+</div>
+
+<!-- ================= TASK 2 ================= -->
+<div class="task">
+<h2>Task 2: Change Paragraph Color</h2>
+
+<p id="paragraph">This is a sample paragraph.</p>
+
+<button onclick="changeColor()">Run Task 2</button>
+</div>
+
+<!-- ================= TASK 3 ================= -->
+<div class="task">
+<h2>Task 3: Change Button Text</h2>
+
+<button id="btnText" onclick="changeButtonText()">Click Me</button>
+</div>
+
+<!-- ================= TASK 4 ================= -->
+<div class="task">
+<h2>Task 4: Update Image Source</h2>
+
+<img id="image" src="/image/m1.jpg" alt="Old Image">
+
+<br><br>
+
+<button onclick="changeImage()">Run Task 4</button>
+</div>
+
+<!-- ================= TASK 5 ================= -->
+<div class="task">
+<h2>Task 5: Create New Paragraph Using JavaScript</h2>
+
+<div id="task5"></div>
+
+<button onclick="createParagraph()">Run Task 5</button>
+</div>
+
+<!-- ================= TASK 6 ================= -->
+<div class="task">
+<h2>Task 6: Append Paragraph to Div</h2>
+
+<div id="task6"></div>
+
+<button onclick="appendParagraph()">Run Task 6</button>
+</div>
+
+<!-- ================= TASK 7 ================= -->
+<div class="task">
+<h2>Task 7: Create List Item Dynamically</h2>
+
+<ul id="list"></ul>
+
+<button onclick="addListItem()">Run Task 7</button>
+</div>
+
+<!-- ================= TASK 8 ================= -->
+<div class="task">
+<h2>Task 8: Remove One Element</h2>
+
+<p id="removePara">Remove this paragraph.</p>
+
+<button onclick="removeElement()">Run Task 8</button>
+</div>
+
+<!-- ================= TASK 9 ================= -->
+<div class="task">
+<h2>Task 9: Build Simple Dynamic Card</h2>
+
+<div id="cardContainer"></div>
+
+<button onclick="createCard()">Run Task 9</button>
+</div>
+
+<!-- ================= TASK 10 ================= -->
+<div class="task">
+<h2>Task 10: Student Details Card (Add, Update, Remove)</h2>
+
+<div id="studentContainer"></div>
+
+<button onclick="addStudent()">Add</button>
+<button onclick="updateStudent()">Update</button>
+<button onclick="removeStudent()">Remove</button>
+</div>
+
+<script>
+
+//================ Task 1 =================
+function changeHeading(){
+    document.getElementById("heading").textContent = "Hello JavaScript";
+}
+
+//================ Task 2 =================
+function changeColor(){
+    document.getElementById("paragraph").style.color = "blue";
+}
+
+//================ Task 3 =================
+function changeButtonText(){
+    document.getElementById("btnText").textContent = "Submitted";
+}
+
+//================ Task 4 =================
+function changeImage(){
+    document.getElementById("image").src =
+    "/image/m2.jpg";
+}
+
+//================ Task 5 =================
+function createParagraph(){
+
+    let p = document.createElement("p");
+    p.textContent = "This paragraph is created using JavaScript.";
+
+    document.getElementById("task5").innerHTML="";
+    document.getElementById("task5").appendChild(p);
+}
+
+//================ Task 6 =================
+function appendParagraph(){
+
+    let p = document.createElement("p");
+    p.textContent = "New paragraph appended to div.";
+
+    document.getElementById("task6").appendChild(p);
+}
+
+//================ Task 7 =================
+let count = 1;
+
+function addListItem(){
+
+    let li = document.createElement("li");
+    li.textContent = "List Item " + count++;
+
+    document.getElementById("list").appendChild(li);
+}
+
+//================ Task 8 =================
+function removeElement(){
+
+    let p = document.getElementById("removePara");
+
+    if(p){
+        p.remove();
+    }
+}
+
+//================ Task 9 =================
+function createCard(){
+
+    let card = document.createElement("div");
+
+    card.className = "card";
+
+    card.innerHTML = `
+        <h3>Product</h3>
+        <p>Price: ₹500</p>
+        <button>Buy Now</button>
+    `;
+
+    document.getElementById("cardContainer").innerHTML="";
+    document.getElementById("cardContainer").appendChild(card);
+}
+
+//================ Task 10 =================
+
+function addStudent(){
+
+    if(document.getElementById("studentCard")) return;
+
+    let card = document.createElement("div");
+
+    card.className="card";
+    card.id="studentCard";
+
+    card.innerHTML=`
+        <h3 id="studentName">Rahul</h3>
+        <p id="studentRoll">Roll No: 101</p>
+        <p id="studentCourse">Course: BCA</p>
+    `;
+
+    document.getElementById("studentContainer").appendChild(card);
+}
+
+function updateStudent(){
+
+    if(document.getElementById("studentCard")){
+
+        document.getElementById("studentName").textContent="Amit";
+        document.getElementById("studentRoll").textContent="Roll No: 102";
+        document.getElementById("studentCourse").textContent="Course: MCA";
+
+    }
+}
+
+function removeStudent(){
+
+    let card=document.getElementById("studentCard");
+
+    if(card){
+        card.remove();
+    }
+
+}
+
+</script>
+
+</body>
+</html>

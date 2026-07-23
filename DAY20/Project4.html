@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // API Data Simulator
+
+let apiData = {
+    users: [
+        {
+            id: 1,
+            name: "Rahul",
+            age: 20
+        },
+        {
+            id: 2,
+            name: "Priya",
+            age: 21
+        }
+    ],
+
+    products: [
+        {
+            id: 101,
+            name: "Laptop",
+            price: 55000
+        },
+        {
+            id: 102,
+            name: "Mouse",
+            price: 500
+        }
+    ],
+
+    courses: [
+        {
+            id: 1,
+            course: "JavaScript",
+            duration: "3 Months"
+        },
+        {
+            id: 2,
+            course: "Python",
+            duration: "2 Months"
+        }
+    ]
+};
+
+// Display JSON data
+console.log(JSON.stringify(apiData, null, 2));
+    </script>
+</body>
+</html>

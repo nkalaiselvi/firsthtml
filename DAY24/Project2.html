@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Project 2: Feedback Form</h2>
+
+    <label>Enter Your Feedback:</label><br>
+    <textarea id="feedback" placeholder="Type your feedback here..."></textarea><br>
+
+    <button id="submitBtn">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function () {
+
+            let feedback = document.getElementById("feedback").value;
+
+            if (feedback.trim() === "") {
+                document.getElementById("message").textContent = "Please enter your feedback.";
+                document.getElementById("message").style.color = "red";
+            } else {
+                document.getElementById("message").textContent = "Thank you! Your feedback has been submitted.";
+                document.getElementById("message").style.color = "green";
+                document.getElementById("feedback").value = "";
+            }
+
+        });
+    </script>
+
+</body>
+</html>
