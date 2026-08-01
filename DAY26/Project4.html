@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      color: #222;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f3c88;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #1f3c88;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #16306b;
+    }
+
+    .weather-card {
+      padding: 16px;
+      border-radius: 12px;
+      background: #f8fbff;
+      border: 1px solid #dbeafe;
+      text-align: center;
+    }
+
+    .weather-card h2 {
+      margin: 0 0 8px;
+      color: #1f3c88;
+    }
+
+    .weather-card p {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather App</h1>
+    <div class="search-box">
+      <input id="cityInput" type="text" placeholder="Enter city name" />
+      <button onclick="getWeather()">Search</button>
+    </div>
+    <div id="weatherResult" class="weather-card">
+      <p>Enter a city to see the weather.</p>
+    </div>
+  </div>
+
+  <script>
+    const weatherCodeMap = {
+      0: 'Clear sky',
+      1: 'Mainly clear',
+      2: 'Partly cloudy',
+      3: 'Overcast',
+      45: 'Fog',
+      48: 'Depositing rime fog',
+      51: 'Light drizzle',
+      53: 'Moderate drizzle',
+      55: 'Dense drizzle',
+      56: 'Light freezing drizzle',
+      57: 'Dense freezing drizzle',
+      61: 'Slight rain',
+      63: 'Moderate rain',
+      65: 'Heavy rain',
+      66: 'Light freezing rain',
+      67: 'Heavy freezing rain',
+      71: 'Slight snow fall',
+      73: 'Moderate snow fall',
+      75: 'Heavy snow fall',
+      77: 'Snow grains',
+      80: 'Slight rain showers',
+      81: 'Moderate rain showers',
+      82: 'Violent rain showers',
+      85: 'Slight snow showers',
+      86: 'Heavy snow showers',
+      95: 'Thunderstorm',
+      96: 'Thunderstorm with slight hail',
+      99: 'Thunderstorm with heavy hail'
+    };
+
+    async function getWeather() {
+      const city = document.getElementById('cityInput').value.trim();
+      const resultBox = document.getElementById('weatherResult');
+
+      if (!city) {
+        resultBox.innerHTML = '<p>Please enter a city name.</p>';
+        return;
+      }
+
+      resultBox.innerHTML = '<p>Loading...</p>';
+
+      try {
+        const geoResponse = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`);
+        if (!geoResponse.ok) {
+          throw new Error('Geocoding request failed');
+        }
+
+        const geoData = await geoResponse.json();
+        if (!geoData.results || geoData.results.length === 0) {
+          throw new Error('City not found');
+        }
+
+        const location = geoData.results[0];
+        const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&current_weather=true&temperature_unit=celsius`);
+        if (!weatherResponse.ok) {
+          throw new Error('Weather request failed');
+        }
+
+        const weatherData = await weatherResponse.json();
+        const current = weatherData.current_weather;
+        const condition = weatherCodeMap[current.weathercode] || 'Unknown';
+
+        resultBox.innerHTML = `
+          <h2>${location.name}, ${location.country}</h2>
+          <p><strong>Temperature:</strong> ${current.temperature}°C</p>
+          <p><strong>Condition:</strong> ${condition}</p>
+        `;
+      } catch (error) {
+        resultBox.innerHTML = `<p style="color:red;">${error.message}</p>`;
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>

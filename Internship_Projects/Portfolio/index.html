@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Portfolio.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="logo" href="#home">KALAI SELVI</a>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="hero-overline">Hi There, I'm</p>
+            <h1>Kalai Selvi</h1>
+            <p class="hero-title">Python Fullstack Developer |</p>
+            <p class="hero-desc">I build modern websites and web apps using Python (Django/Flask) and JavaScript. I focus on clean interfaces and responsive design that work well across devices.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="Kalai_Selvi_Resume_Updated.pdf" download>Download CV</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-ring"></div>
+              <div class="image-card">
+                <img src="image.png" alt="Kalai Selvi" />
+                <div class="image-card-badge">Python Fullstack Developer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <p> Front-End Developer with experience building responsive web applications using ReactJS, JavaScript, HTML, CSS, and Next.js. 
+          Strong foundation in UI development, API integration, version control, and modern web technologies. Seeking an entry-level software development opportunity to contribute technical skills and continue professional growth.</p>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>Django</li>
+          <li>Flask</li>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>MySQL</li>
+          <li>REST APIs</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section">
+        <h2>Mini Projects</h2>
+        <div class="project-grid">
+          <div class="card">
+            <h3>To-Do List</h3>
+            <p>I created a simple to-do list where I can add tasks, mark them done, and remove them.</p>
+            <p><a href="todolist/todolist.html" target="_blank" rel="noopener noreferrer">Open To-Do List</a></p>
+          </div>
+          <div class="card">
+            <h3>Weather App</h3>
+            <p>A weather app project that shows a simple and interactive UI for checking weather details.</p>
+            <p><a href="WeatherAPP/Project4.html" target="_blank" rel="noopener noreferrer">Open Weather App</a></p>
+          </div>
+          <div class="card">
+            <h3>Registration Form</h3>
+            <p>A registration form project with a clean layout and user-friendly input fields.</p>
+            <p><a href="Resg_form/Project2.html" target="_blank" rel="noopener noreferrer">Open Registration Form</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for freelance work or collaboration. I will respond to your message on Gmail.</p>
+    <form class="contact-form" id="contactForm">
+        <input type="text" name="name" id="userName" placeholder="Your Name" required />
+        <input type="email" name="email" id="userEmail" placeholder="Your Email" required />
+        <textarea name="message" id="userMessage" placeholder="Write a message" required></textarea>
+        <button type="submit" id="sendButton">Send Message</button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+    </form>
+</section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="https://github.com/nkalaiselvi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65 5.65 12 0 12 0 12 24 12 24 18.35 24 23.5 18.85 23.5 12.5 23.5 6.15 18.35.5 12 .5zM8.2 19.4c-.1 0-.2-.1-.2-.2v-2.2c0-.2-.1-.3-.3-.4-1.1-.3-1.7-1-1.7-2.2 0-.5.2-1 .5-1.4-.2-.5-.2-1.1-.1-1.7.1-.5.3-1 .6-1.4.1-.1.2-.2.3-.2.4-.1.8-.2 1.3-.1.6.1 1.1.3 1.6.7.5-.1 1-.2 1.5-.2.5 0 1 .1 1.5.2.5-.4 1-.6 1.6-.7.5-.1 1-.1 1.4.1.1 0 .2.1.3.2.3.4.5.9.6 1.4.1.6.1 1.2-.1 1.7.3.4.5.9.5 1.4 0 1.2-.6 1.9-1.7 2.2-.2.1-.3.2-.3.4v2.2c0 .1-.1.2-.2.2-.3.1-.6.1-.8 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kalai-selvi-n-007b20271" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12zM5.5 9.5h2.88V18H5.5zM10.5 9.5h2.76v1.16h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.45 1.91 3.45 4.4V18h-2.88v-7.42c0-1.77-.03-4.04-2.46-4.04-2.46 0-2.84 1.92-2.84 3.9V18H10.5z"/>
+          </svg>
+        </a>
+      </div>
+      <p>© <span id="year"></span> Kalai Selvi. All rights reserved.</p>
+    </footer>
+
+    <script src="Portfolio.js"></script>
+  </body>
+</html>

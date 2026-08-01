@@ -1,0 +1,16 @@
+in cmd check the  node version 
+(node --version or node -v)
+ 
+cmd redirect to folder path 
+
+npm create vite@latest myapp(my application name)
+ 
+react choice and javascript choice and  enter to create new app folder
+ 
+cd myapp(my application name )
+ 
+npm install
+ 
+npm run dev
+ 
+ 

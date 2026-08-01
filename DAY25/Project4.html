@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Checkout Form</h2>
+
+        <form id="checkoutForm">
+            <label for="address">Address</label>
+            <textarea id="address" autocomplete="street-address" minlength="10"></textarea>
+            <div id="addressError" class="error"></div>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" autocomplete="tel" inputmode="numeric" minlength="10" maxlength="10" pattern="[0-9]{10}">
+            <div id="phoneError" class="error"></div>
+
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" inputmode="numeric" autocomplete="postal-code" minlength="6" maxlength="6" pattern="[1-9][0-9]{5}">
+            <div id="pincodeError" class="error"></div>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const address = document.getElementById("address").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const pincode = document.getElementById("pincode").value.trim();
+            const phonePattern = /^\d{10}$/;
+            const pincodePattern = /^[1-9]\d{5}$/;
+            let valid = true;
+
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.textContent = "";
+            });
+
+            if (address === "") {
+                document.getElementById("addressError").textContent = "Address is required";
+                valid = false;
+            } else if (address.length < 10) {
+                document.getElementById("addressError").textContent = "Enter a valid address of at least 10 characters";
+                valid = false;
+            }
+
+            if (phone === "") {
+                document.getElementById("phoneError").textContent = "Phone number is required";
+                valid = false;
+            } else if (!phonePattern.test(phone)) {
+                document.getElementById("phoneError").textContent = "Phone number must contain exactly 10 digits";
+                valid = false;
+            }
+
+            if (pincode === "") {
+                document.getElementById("pincodeError").textContent = "Pincode is required";
+                valid = false;
+            } else if (!pincodePattern.test(pincode)) {
+                document.getElementById("pincodeError").textContent = "Pincode must contain exactly 6 digits";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Order placed successfully!");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:20px;
+    }
+    .task{
+        border:1px solid #ccc;
+        padding:15px;
+        margin-bottom:20px;
+        border-radius:8px;
+    }
+    input{
+        padding:8px;
+        width:250px;
+    }
+    button{
+        padding:8px 15px;
+        margin-top:10px;
+    }
+    .error{
+        color:red;
+        font-size:14px;
+    }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Validation Tasks</h1>
+
+<!-- ================= TASK 1 ================= -->
+<div class="task">
+<h2>Task 1 - Validate Empty Name Field</h2>
+
+<input type="text" id="name1" placeholder="Enter Name">
+<div id="nameError1" class="error"></div>
+<br>
+<button onclick="task1()">Validate</button>
+</div>
+
+<!-- ================= TASK 2 ================= -->
+<div class="task">
+<h2>Task 2 - Validate Email Input</h2>
+
+<input type="text" id="email2" placeholder="Enter Email">
+<div id="emailError2" class="error"></div>
+<br>
+<button onclick="task2()">Validate</button>
+</div>
+
+<!-- ================= TASK 3 ================= -->
+<div class="task">
+<h2>Task 3 - Validate Password Length</h2>
+
+<input type="password" id="password3" placeholder="Enter Password">
+<div id="passwordError3" class="error"></div>
+<br>
+<button onclick="task3()">Validate</button>
+</div>
+
+<!-- ================= TASK 4 ================= -->
+<div class="task">
+<h2>Task 4 - Check Age > 18</h2>
+
+<input type="number" id="age4" placeholder="Enter Age">
+<div id="ageError4" class="error"></div>
+<br>
+<button onclick="task4()">Validate</button>
+</div>
+
+<!-- ================= TASK 5 ================= -->
+<div class="task">
+<h2>Task 5 - Show Error if Phone Number Empty</h2>
+
+<input type="text" id="phone5" placeholder="Enter Phone Number">
+<div id="phoneError5" class="error"></div>
+<br>
+<button onclick="task5()">Validate</button>
+</div>
+
+<!-- ================= TASK 6 ================= -->
+<div class="task">
+<h2>Task 6 - Login Validation</h2>
+
+<input type="text" id="loginEmail" placeholder="Email"><br><br>
+<input type="password" id="loginPassword" placeholder="Password">
+<div id="loginError" class="error"></div>
+<br>
+<button onclick="task6()">Login</button>
+</div>
+
+<!-- ================= TASK 7 ================= -->
+<div class="task">
+<h2>Task 7 - Signup Form Validation</h2>
+
+<input type="text" id="signupName" placeholder="Name"><br><br>
+<input type="text" id="signupEmail" placeholder="Email"><br><br>
+<input type="password" id="signupPassword" placeholder="Password">
+<div id="signupError" class="error"></div>
+<br>
+<button onclick="task7()">Signup</button>
+</div>
+
+<!-- ================= TASK 8 ================= -->
+<div class="task">
+<h2>Task 8 - Use preventDefault()</h2>
+
+<form id="form8">
+<input type="text" placeholder="Type Something">
+<br><br>
+<button type="submit">Submit</button>
+</form>
+
+<p id="preventMsg"></p>
+</div>
+
+<!-- ================= TASK 9 ================= -->
+<div class="task">
+<h2>Task 9 - Show Error Messages Below Inputs</h2>
+
+<input type="text" id="name9" placeholder="Enter Name">
+<div id="error9" class="error"></div>
+<br>
+<button onclick="task9()">Check</button>
+</div>
+
+<!-- ================= TASK 10 ================= -->
+<div class="task">
+<h2>Task 10 - Complete Registration Validation</h2>
+
+<input type="text" id="name10" placeholder="Name"><br><br>
+<div id="nameError10" class="error"></div>
+
+<input type="text" id="email10" placeholder="Email">
+<div id="emailError10" class="error"></div><br>
+
+<input type="password" id="password10" placeholder="Password">
+<div id="passwordError10" class="error"></div><br>
+
+<input type="password" id="confirm10" placeholder="Confirm Password">
+<div id="confirmError10" class="error"></div><br>
+
+<button onclick="task10()">Register</button>
+</div>
+
+<script>
+
+// Task 1
+function task1(){
+    let name=document.getElementById("name1").value.trim();
+    document.getElementById("nameError1").innerHTML=
+    name===""?"Name is required":"Valid Name";
+}
+
+// Task 2
+function task2(){
+    let email=document.getElementById("email2").value;
+    let pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    document.getElementById("emailError2").innerHTML=
+    pattern.test(email)?"Valid Email":"Invalid Email";
+}
+
+// Task 3
+function task3(){
+    let pass=document.getElementById("password3").value;
+    document.getElementById("passwordError3").innerHTML=
+    pass.length>6?"Valid Password":"Minimum 6 characters";
+}
+
+// Task 4
+function task4(){
+    let age=document.getElementById("age4").value;
+    document.getElementById("ageError4").innerHTML=
+    age>18?"Eligible":"Age must be greater than 18";
+}
+
+// Task 5
+function task5(){
+    let phone=document.getElementById("phone5").value.trim();
+    document.getElementById("phoneError5").innerHTML=
+    phone===""?"Phone number required":"Valid Phone";
+}
+
+// Task 6
+function task6(){
+    let email=document.getElementById("loginEmail").value.trim();
+    let pass=document.getElementById("loginPassword").value;
+    let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    document.getElementById("loginError").innerHTML="";
+
+    if(email==="" || pass===""){
+        document.getElementById("loginError").innerHTML="Email and Password are required";
+    } else if(!pattern.test(email)){
+        document.getElementById("loginError").innerHTML="Enter a valid email address";
+    } else {
+        alert("Login Successful");
+    }
+}
+
+// Task 7
+function task7(){
+    let name=document.getElementById("signupName").value.trim();
+    let email=document.getElementById("signupEmail").value.trim();
+    let pass=document.getElementById("signupPassword").value;
+    let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    document.getElementById("signupError").innerHTML="";
+
+    if(name===""||email===""||pass===""){
+        document.getElementById("signupError").innerHTML="All fields are required";
+    } else if(!pattern.test(email)){
+        document.getElementById("signupError").innerHTML="Enter a valid email address";
+    } else if(pass.length<6){
+        document.getElementById("signupError").innerHTML="Password must be at least 6 characters";
+    } else {
+        alert("Signup Successful");
+    }
+}
+
+// Task 8
+document.getElementById("form8").addEventListener("submit",function(e){
+    e.preventDefault();
+    document.getElementById("preventMsg").innerHTML="Form submission prevented using preventDefault().";
+});
+
+// Task 9
+function task9(){
+    let name=document.getElementById("name9").value;
+    document.getElementById("error9").innerHTML=
+    name===""?"Please enter your name":"";
+}
+
+// Task 10
+function task10(){
+
+    let name=document.getElementById("name10").value.trim();
+    let email=document.getElementById("email10").value.trim();
+    let pass=document.getElementById("password10").value;
+    let confirm=document.getElementById("confirm10").value;
+
+    let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    document.getElementById("emailError10").innerHTML="";
+    document.getElementById("passwordError10").innerHTML="";
+    document.getElementById("confirmError10").innerHTML="";
+    document.getElementById("nameError10").innerHTML="";
+
+    if(name===""){
+        document.getElementById("nameError10").innerHTML="Name is required";
+        return;
+    }
+
+    if(email===""){
+        document.getElementById("emailError10").innerHTML="Email is required";
+        return;
+    }
+
+    if(!pattern.test(email)){
+        document.getElementById("emailError10").innerHTML="Enter a valid email address";
+        return;
+    }
+
+    if(pass.length<6){
+        document.getElementById("passwordError10").innerHTML="Minimum 6 characters";
+        return;
+    }
+
+    if(pass!==confirm){
+        document.getElementById("confirmError10").innerHTML="Passwords do not match";
+        return;
+    }
+
+    alert("Registration Successful");
+}
+
+</script> 
+
+
+</body>
+</html>

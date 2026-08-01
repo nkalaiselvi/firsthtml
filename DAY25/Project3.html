@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Admission Form</h2>
+
+        <form id="admissionForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" autocomplete="name">
+            <div id="nameError" class="error"></div>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" min="0" step="1">
+            <div id="ageError" class="error"></div>
+
+            <label for="course">Course</label>
+            <select id="course">
+                <option value="">Select a course</option>
+                <option value="python">Python Full Stack</option>
+                <option value="web-development">Web Development</option>
+                <option value="data-science">Data Science</option>
+            </select>
+            <div id="courseError" class="error"></div>
+
+            <button type="submit">Submit Admission</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("admissionForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const ageValue = document.getElementById("age").value;
+            const course = document.getElementById("course").value;
+            const age = Number(ageValue);
+            let valid = true;
+
+            document.querySelectorAll(".error").forEach(function (error) {
+                error.textContent = "";
+            });
+
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name is required";
+                valid = false;
+            }
+
+            if (ageValue === "") {
+                document.getElementById("ageError").textContent = "Age is required";
+                valid = false;
+            } else if (!Number.isInteger(age) || age <= 18) {
+                document.getElementById("ageError").textContent = "Age must be greater than 18";
+                valid = false;
+            }
+
+            if (course === "") {
+                document.getElementById("courseError").textContent = "Please select a course";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Admission form submitted successfully!");
+            }
+        });
+    </script>
+</body>
+</html>
