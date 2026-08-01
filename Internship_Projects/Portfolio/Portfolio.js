@@ -28,9 +28,13 @@ if (form) {
             sendBtn.textContent = 'Send Message';
         })
         .catch(function(error) {
-            statusBox.textContent = '❌ Failed to send. Please try again later.';
-            statusBox.style.color = '#ff5f26';
-            sendBtn.textContent = 'Send Message';
+        console.error("EmailJS Error:", error);
+
+        statusBox.textContent =
+        error.text || error.message || JSON.stringify(error);
+
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send Message";
         });
     });
 }
